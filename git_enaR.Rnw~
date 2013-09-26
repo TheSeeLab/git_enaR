@@ -65,6 +65,19 @@ The gist of git is:
 \item Merge your changes with the project (git merge origin)
 \end{enumerate}
 
+\section{The perks of using github}
+
+\begin{itemize}
+\item GUI
+\item Track and control users (add/remove collaborators)
+\item Web hosting
+\item Automatic page generator
+\item 1GB storage
+\item wiki
+\item Can it play with CRAN?
+\end{itemize}
+
+
 \hypersetup{linkcolor=green}
 
 \section{What do I do first?}
@@ -106,7 +119,7 @@ hard rules, but generally changes should be committed grouped together
 based on tasks (e.g. ``Fixed a bug in a function.''). Google ``git
 best practices'' for more info.
 
-\section{How do I use git with github for enaR?}
+\section{How do I git with enaR?}
 
 \textbf{.gitignore}
 
@@ -130,12 +143,82 @@ emacs.
 
 \textbf{Clone enaR}
 
+To bring a copy onto your local machine run: 
+
+\begin{verbatim}
+git clone git://github.com/MKLau/enaR
+\end{verbatim}
+
+Note: It is also possible to do this on the github using the ``fork''
+option. This is useful for working on other peoples projects in a way
+that will keep their code untouched but allow you to save to the
+github server.
+
 \textbf{Checkout a branch}
+
+Now, you will need to isolate your work from the ``master'' copy of
+the repository. To do this you will need to create a branch by
+running:
+
+\begin{verbatim}
+git checkout -b mycopy
+\end{verbatim}
+
+You can also delete a branch, which you are no longer on, with:
+
+\begin{verbatim}
+git branch -D mycopy
+\end{verbatim}
 
 \textbf{Push a branch to the origin}
 
+Once you have made your changes and committed them (see above), you
+will want to ``push'' them onto the server so that other users can
+access them. To do this use:
+
+\begin{verbatim}
+git push
+\end{verbatim}
+
+Depending on what instructions you used to setup git, this may produce
+an fial, error and/or warning. Hopefully not though.
+
+If this succeeds, your information from your branch should be
+propogated up onto the github server. These changes can then be merged
+into the main project repository.
+
 \textbf{Pull enaR origin and merge}
 
+If you have already cloned a version of the project onto your local
+machine, you will want to update it when you start working on it again
+at some point. To do this you will need to ``pull'' the origin off the
+server and merge it with your local version. This can be accomplished
+by first switching to your local repository and then checking out your
+branch:
+
+\begin{verbatim}
+git checkout mybranch
+\end{verbatim}
+
+And then you can pull from the server:
+
+\begin{verbatim}
+git pull origin
+\end{verbatim}
+
+Again, depending on your setup, you might need to alter the previous
+line of code for this to work.
+
+\textbf{Using SSH}
+
+By default, git uses HTTPS for security reasons. To switch to SSH and
+not have to constantly enter your security info use the following:
+
+\begin{verbatim}
+git remote set-url origin git@github.com:MKLau/enaR.git
+\end{verbatim}
+
+%%%For gist repository:
+%%%git remote set-url origin git@gist.github.com:MKLau/6630550.git 
+
 \end{document}  
-
-

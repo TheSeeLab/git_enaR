@@ -218,5 +218,8 @@ not have to constantly enter your security info use the following:
 git remote set-url origin git@github.com:MKLau/enaR.git
 \end{verbatim}
 
+%%%For gist repository:
+%%%git remote set-url origin git@gist.github.com:MKLau/6630550.git 
+%%%git remote set-url origin git@gist.github.com:MKLau/6623596.git
 
 \end{document}  
